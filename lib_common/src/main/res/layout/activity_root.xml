@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/common_toolbar"/>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srl_layout"
+        android:layout_width="match_parent"
+        app:srlEnableLoadMore="false"
+        app:srlEnableRefresh="false"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_root"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ViewStub
+                android:id="@+id/view_stub_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ViewStub
+                android:id="@+id/view_stub_nodata"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/layout_no_data_view"
+                />
+
+            <ViewStub
+                android:id="@+id/view_stub_error_net"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/layout_error_net_view"
+                />
+
+            <ViewStub
+                android:id="@+id/view_stub_error_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/layout_error_data_view"
+                />
+        </RelativeLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</RelativeLayout>

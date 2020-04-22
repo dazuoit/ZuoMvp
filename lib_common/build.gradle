@@ -1,0 +1,91 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
+    }
+    buildTypes {
+        debug {
+            buildConfigField "boolean", 'IS_DEBUG', 'true'
+        }
+        release {
+            buildConfigField "boolean", 'IS_DEBUG', 'false'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api rootProject.ext.support["support-v4"]
+    api rootProject.ext.support["appcompat-v7"]
+    api rootProject.ext.support["recyclerview-v7"]
+    api rootProject.ext.support["support-v13"]
+    api rootProject.ext.support["support-fragment"]
+    api rootProject.ext.support["design"]
+    api rootProject.ext.support["junit"]
+    api rootProject.ext.dependencies["utilcode"]
+    api rootProject.ext.dependencies["gson"]
+    api(rootProject.ext.dependencies["glide"]) { exclude group: 'com.android.support' }
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+    api(rootProject.ext.dependencies["glide-transformations"]) {
+        exclude group: 'com.android.support'
+    }
+    api rootProject.ext.dependencies["okhttp3-integration"]
+    api rootProject.ext.dependencies["exifinterface"]
+    api(rootProject.ext.dependencies["BigImageViewPager"]) {
+        exclude group: 'com.android.support'
+    }
+    api rootProject.ext.dependencies["rxjava"]
+    api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["okhttp"]
+    api rootProject.ext.dependencies["logging-interceptor"]
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["converter-scalars"]
+    api rootProject.ext.dependencies["adapter-rxjava"]
+    api rootProject.ext.dependencies["rxlifecycle"]
+    api rootProject.ext.dependencies["rxlifecycle-android"]
+    annotationProcessor rootProject.ext.dependencies["rxlifecycle-components"]
+    api(rootProject.ext.dependencies["rxpermissions"]) { exclude group: 'com.android.support' }
+    api rootProject.ext.dependencies["zxing-library"]
+    api rootProject.ext.dependencies["FastBleLib"]
+    api rootProject.ext.dependencies["dialog"]
+    api rootProject.ext.dependencies["eventbus"]
+    api rootProject.ext.dependencies["Adapter"]
+    api rootProject.ext.dependencies["SmartRefreshLayout"]
+    api(rootProject.ext.dependencies["matisse"]) { exclude group: 'com.android.support' }
+    api(rootProject.ext.dependencies["mosby3-mvp"]) { exclude group: 'com.android.support' }
+    api(rootProject.ext.dependencies["mosby3-mvp-viewstate"]) {
+        exclude group: 'com.android.support'
+    }
+    api rootProject.ext.dependencies["autosize"]
+    api rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    api rootProject.ext.dependencies["alphatabs"]
+    api rootProject.ext.dependencies["FragmentBackHandler"]
+    api rootProject.ext.dependencies["arouter-api"]
+    //annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+}
