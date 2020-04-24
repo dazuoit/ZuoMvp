@@ -17,7 +17,7 @@ import okhttp3.RequestBody;
  * FileName: MJsonUtils
  * Author: zuo
  * Date: 2018/6/6
- * Description:穷举所有字段,统一规划
+ * Description:  穷举所有字段,统一规划
  * Version: 1.0
  */
 

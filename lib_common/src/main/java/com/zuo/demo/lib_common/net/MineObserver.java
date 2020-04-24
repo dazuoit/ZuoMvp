@@ -10,7 +10,7 @@ import io.reactivex.disposables.Disposable;
  * @author zuo
  * @filename: MineObserver
  * @date: 2020/4/20
- * @description: 自定义回调
+ * @description: 自定义回调  根据要求自己拓展
  * @version: 1.0
  */
 public abstract class MineObserver<T> implements Observer<RespData<T>> {

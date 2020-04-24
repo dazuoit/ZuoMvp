@@ -71,7 +71,6 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["rxlifecycle-components"]
     api(rootProject.ext.dependencies["rxpermissions"]) { exclude group: 'com.android.support' }
     api rootProject.ext.dependencies["zxing-library"]
-    api rootProject.ext.dependencies["FastBleLib"]
     api rootProject.ext.dependencies["dialog"]
     api rootProject.ext.dependencies["eventbus"]
     api rootProject.ext.dependencies["Adapter"]
@@ -87,5 +86,4 @@ dependencies {
     api rootProject.ext.dependencies["alphatabs"]
     api rootProject.ext.dependencies["FragmentBackHandler"]
     api rootProject.ext.dependencies["arouter-api"]
-    //annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 }

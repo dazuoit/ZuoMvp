@@ -52,13 +52,6 @@ public  class RetrofitManager {
 				writeTimeout(ZuoGobal.CONNECT_TIME_OUT, TimeUnit.MILLISECONDS);
 		okHttpBuilder.addInterceptor(mHeaderInterceptor);
 		okHttpBuilder.addInterceptor(logging);
-
-		//给client的builder添加了一个socketFactory
-		/*SSLContext sslContext = SSLContextUtil.getDefaultSLLContext();
-		if (sslContext != null) {
-			SSLSocketFactory socketFactory = sslContext.getSocketFactory();
-			okHttpBuilder.sslSocketFactory(socketFactory);
-		}*/
 		okHttpBuilder.hostnameVerifier(SSLContextUtil.HOSTNAME_VERIFIER);
 
 		//创建client
@@ -79,6 +72,7 @@ public  class RetrofitManager {
 	private  Interceptor mHeaderInterceptor = chain -> {
 		Request request = chain.request();
 		Request.Builder builder = interceptBuild(request.newBuilder());
+		//根据要求自己编写
 		return chain.proceed(builder.build());
 	};
 

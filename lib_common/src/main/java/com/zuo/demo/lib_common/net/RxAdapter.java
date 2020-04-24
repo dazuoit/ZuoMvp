@@ -36,29 +36,8 @@ public class RxAdapter {
             throw new IllegalArgumentException("context not the LifecycleProvider type");
         }
     }
-    /**
-     * 线程调度器
-     */
-    public static SingleTransformer singleSchedulersTransformer() {
-        return new SingleTransformer() {
-            @Override
-            public SingleSource apply(Single upstream) {
-                return upstream.subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread());
-            }
-        };
-    }
-    public static SingleTransformer singleExceptionTransformer() {
 
-        return new SingleTransformer() {
-            @Override
-            public SingleSource apply(Single observable) {
-                return observable
-                        .map(new HandleFuc())  //这里可以取出BaseResponse中的Result
-                        .onErrorResumeNext(new HttpResponseFunc());
-            }
-        };
-    }
+
     /**
      * 线程调度器
      */
@@ -90,7 +69,7 @@ public class RxAdapter {
             ResponseThrowable exception = ExceptionHandler.handleException(t);
             if(exception.code ==  ExceptionHandler.SYSTEM_ERROR.TIMEOUT_ERROR ){
                 ToastUtils.showShort("网络不给力哦！");
-            }
+            }//自己拓展
             return Observable.error(exception);
         }
     }

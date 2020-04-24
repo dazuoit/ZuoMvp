@@ -58,6 +58,7 @@ public class BasePresenter<V extends BaseView> extends MvpBasePresenter<V> {
 		mMvpView = view;
 	}
 
+
 	@Override
 	public void detachView() {
 		super.detachView();
@@ -72,7 +73,7 @@ public class BasePresenter<V extends BaseView> extends MvpBasePresenter<V> {
 	}
 
 	public <T> void forNet(Observable observable, MineObserver<T> observer) {
-		if (mMvpView.checkNetWork()) {
+		if ( isViewAttached() && mMvpView.checkNetWork()) {
 			RetrofitManager.getInstance().forNet(observable, observer);
 		}
 	}

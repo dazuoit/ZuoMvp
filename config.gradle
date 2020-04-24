@@ -3,7 +3,7 @@ ext {
     android = [
             compileSdkVersion: 27,
             buildToolsVersion: "27.1.1",
-            applicationId    : "com.zuo.demo",
+            applicationId    : "com.zuo.mvp",
             minSdkVersion    : 19,
             targetSdkVersion : 27,
             versionCode      : 1,
@@ -58,8 +58,6 @@ ext {
             "rxpermissions"         : "com.github.tbruyelle:rxpermissions:0.10.2",
             //二维码
             "zxing-library"         : "cn.yipianfengye.android:zxing-library:2.2",
-            //蓝牙
-            "FastBleLib"            : "com.clj.fastble:FastBleLib:2.3.4",
             //loading
             "dialog"                : "com.kongzue.dialog_v3:dialog:3.1.8",
             //消息总线

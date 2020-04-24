@@ -120,6 +120,7 @@ public class ExceptionHandler {
     }
 
     public interface APP_ERROR {
+        //自己补充
         public static final int SUCC = 0;//	处理成功，无错误
     }
 }

@@ -12,7 +12,7 @@ import com.zuo.demo.lib_common.glide.MyGlide;
  * @author zuo
  * @filename: ToolBarUtils
  * @date: 2020/4/20
- * @description: title设置
+ * @description: title设置 自己拓展
  * @version: 1.0
  */
 public class ToolBarUtils {
